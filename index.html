@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meet The Team</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+    }
+
+    header {
+      background: url('https://media.licdn.com/dms/image/v2/D4E22AQHc84FzSBhG1Q/feedshare-shrink_2048_1536/B4EZbNby1qGQAs-/0/1747203342364?e=1750291200&v=beta&t=r-qo8vT3nphTvNaNVbol3hmnYcJh1MAatgJ7qjPfLMI') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 260px 20px 210px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #222;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    nav .logo img {
+      height: 26px;
+      margin-right: 8px;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-right button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-right button:first-child {
+      background-color: white;
+      color: #444;
+      border: 2px solid #444;
+    }
+
+    .nav-right button:first-child:hover {
+      background-color: #f0f0f0;
+    }
+
+    .nav-right button:last-child {
+      background-color: #444;
+      color: white;
+    }
+
+    .nav-right button:last-child:hover {
+      background-color: #222;
+    }
+
+    .intro {
+      font-size: 3.5rem;
+      font-weight: bold;
+      max-width: 800px;
+      margin: auto;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .about {
+      padding: 40px 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .about img {
+      height: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .about-text {
+      max-width: 400px;
+      font-size: 26px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .projects-section {
+      text-align: center;
+      padding: 20px 0px;
+    }
+
+    .projects-section h2 {
+      font-size: 32px;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+	.marquee {
+	  overflow-x: auto;
+	  overflow-y: hidden;
+	  position: relative;
+	  width: 100%;
+	  padding: 20px 0;
+	  white-space: nowrap;
+	  scroll-behavior: smooth;
+	}
+
+	.marquee::-webkit-scrollbar {
+	  height: 8px;
+	}
+	.marquee::-webkit-scrollbar-thumb {
+	  background: #ccc;
+	  border-radius: 4px;
+	}
+
+	.marquee-content {
+	  display: flex;
+	  width: max-content;
+	  animation: marquee-scroll 40s linear infinite;
+	}
+
+	.marquee-content > .project-card {
+	  flex: 0 0 auto;
+	  margin: 0 10px;
+	  border-radius: 12px;
+	  overflow: hidden;
+	  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+	}
+
+	.project-card img {
+	  height: 400px;
+	  object-fit: cover;
+	  display: block;
+	  border-radius: 12px;
+	}
+
+	@keyframes marquee-scroll {
+	  0% {
+		transform: translateX(0);
+	  }
+	  100% {
+		transform: translateX(-50%);
+	  }
+	}
+
+    .team-section {
+      text-align: center;
+      padding: 20px 20px 50px;
+    }
+	
+	.team-photo {
+	  width: 200px;
+	  height: 200px;
+	  object-fit: cover;
+	  border-radius: 8px;
+	}
+
+    .team-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      background: white;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+    }
+
+    footer {
+      background: #444;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 30px 20px;
+      flex-wrap: wrap;
+    }
+
+    footer div h4 {
+      margin-bottom: 10px;
+    }
+
+    footer div a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+	<nav>
+		  <div class="logo">
+			<img src="https://media.licdn.com/dms/image/v2/D5622AQFH7A_61HSqCQ/feedshare-shrink_160/B56ZawWg3xGgAc-/0/1746715415407?e=1749686400&v=beta&t=IqUxSumZVdridopjHlTC0-Zjz6RUW2MiLm8ro3nXq4M" alt="IDLE logo">
+		   
+		  </div>
+		  <div>
+				<a href="#">Work</a>
+				<a href="#">Growth</a>
+				<a href="#">About</a>
+				<a href="#">Career</a>
+		  </div>
+		  <div class="nav-right">
+				<button>Log in</button>
+				<button>Sign up</button>
+		  </div>
+	</nav>
+
+	<header>
+		  <div class="intro">
+			 BSEMC creatives finding power in stillness, and storytelling in every quiet frame.
+		  </div>
+	</header>
+
+	<section class="about">
+		  <img src="https://media.licdn.com/dms/image/v2/D5622AQG3v7QAiZ5tTQ/feedshare-shrink_800/B56ZawWg3iHUAo-/0/1746715414463?e=1749686400&v=beta&t=AP1B735SwHBwzUXQtSfwUsjvjEFDC-emCfRVdixvwfw">
+		  <div class="about-text">
+			 <p>"We are IDLE — BSEMC students who believe that creativity doesn’t always have to rush. In the stillness, we find meaning; in every quiet frame, a story unfolds. Through serene and thoughtful animation, we challenge the idea that movement is everything — because even in pause, there is power."</p>
+		  </div>
+	</section>
+	
+	<section class="projects-section">
+	  <h2>Projects</h2>
+	  <div class="marquee">
+			<div class="marquee-content">
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQG1FYcorNYzQA/feedshare-shrink_2048_1536/B56ZbKMbQ5H0As-/0/1747148977981?e=1750291200&v=beta&t=ipl_WlEHLG9YKbLP2cxNklIvwHiRMB8NETyZf2-_ZUY" alt="Project 1"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQG9QEPR0e4YEg/feedshare-shrink_1280/B56ZbKMbRPGgAk-/0/1747148978147?e=1750291200&v=beta&t=DarafIP3Ct645yaMkB7WsytjDjIFBl-PCRF5jls6ExQ" alt="Project 2"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQER6GwCg5ISXg/feedshare-shrink_2048_1536/B56ZbKMbQ3H0As-/0/1747148978072?e=1750291200&v=beta&t=0cWJhfo8KxPle4euFVycaQvgsY9Y-gemvauwqDJUlME" alt="Project 3"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQHeHn_f4jqwNA/feedshare-shrink_2048_1536/B56ZbKMbRAGkAs-/0/1747148977811?e=1750291200&v=beta&t=1yMwfIhmJj1ZJfVs23RIvItRdKMOUddhjeg5jfTwKjk" alt="Project 4"></div>
+		      <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQE8As7ALk_BhA/feedshare-shrink_2048_1536/B56ZbKMbRZGkAo-/0/1747148978473?e=1750291200&v=beta&t=BDLquZ51mzhTwynbvsA9KAKTyTkxKqMvNrYKVO69cGs" alt="Project 5"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQFiqZEe5H_NHw/feedshare-shrink_2048_1536/B56ZbKMbRRHUAs-/0/1747148978421?e=1750291200&v=beta&t=D24xr8UULLP-gkBAcIAdKcPtzY1nRoXm5yBcsmBcInQ" alt="Project 6"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQG4hWUqf312Og/feedshare-shrink_2048_1536/B56ZbKMbSFH4As-/0/1747148981591?e=1750291200&v=beta&t=eK34aQgOlljvsTC-7NvaLCX9HG35MA1Bp1IAIwNycgI" alt="Project 7"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQGKTR9Lr4V3Vw/feedshare-shrink_2048_1536/B56ZbKMbSXHUAo-/0/1747148980322?e=1750291200&v=beta&t=Gmz3IXgaIQ_Gj70Ht7Yg6BllL3bNHbJzp7gTs89uQwM" alt="Project 8"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQE5s749pQyFig/feedshare-shrink_2048_1536/B56ZbKMbREHgAo-/0/1747148978428?e=1750291200&v=beta&t=ukebKWviHSZLsZtUTDuMQ-M-e1qukhpDBte2DK6X2xU" alt="Project 9"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQGTe1Bo7LBTwg/feedshare-shrink_1280/B56ZbKMbSLGoAw-/0/1747148978475?e=1750291200&v=beta&t=RPmXSzVzT4S_XeLFboZZXIuXiT6pfGak1KYAaxskJVY" alt="Project 10"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQEIgc1vWAhWvw/feedshare-shrink_1280/B56ZbKMbR5H0Ak-/0/1747148978470?e=1750291200&v=beta&t=5nGk9pZEsA9iLegEvraT7UuMADR65J5F7c1tVnA5toY" alt="Project 11"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQE2xUpfHUoDRw/feedshare-shrink_2048_1536/B56ZbKMbRzH0Ao-/0/1747148978571?e=1750291200&v=beta&t=VcY5pDsZoKKeh4LbnMR_2HrCzfW87tRCcGStzGpSUSU" alt="Project 12"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQFmpzrhMJZdyw/feedshare-shrink_800/B56ZbKMbRNGsAg-/0/1747148977947?e=1750291200&v=beta&t=_1ADtkI00BsS6cZza7RS3jxfNuWF7UIPCf_c6Db1kWg" alt="Project 12"></div>
+		  
+		      <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQG1FYcorNYzQA/feedshare-shrink_2048_1536/B56ZbKMbQ5H0As-/0/1747148977981?e=1750291200&v=beta&t=ipl_WlEHLG9YKbLP2cxNklIvwHiRMB8NETyZf2-_ZUY" alt="Project 1"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQG9QEPR0e4YEg/feedshare-shrink_1280/B56ZbKMbRPGgAk-/0/1747148978147?e=1750291200&v=beta&t=DarafIP3Ct645yaMkB7WsytjDjIFBl-PCRF5jls6ExQ" alt="Project 2"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQER6GwCg5ISXg/feedshare-shrink_2048_1536/B56ZbKMbQ3H0As-/0/1747148978072?e=1750291200&v=beta&t=0cWJhfo8KxPle4euFVycaQvgsY9Y-gemvauwqDJUlME" alt="Project 3"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQHeHn_f4jqwNA/feedshare-shrink_2048_1536/B56ZbKMbRAGkAs-/0/1747148977811?e=1750291200&v=beta&t=1yMwfIhmJj1ZJfVs23RIvItRdKMOUddhjeg5jfTwKjk" alt="Project 4"></div>
+		      <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQE8As7ALk_BhA/feedshare-shrink_2048_1536/B56ZbKMbRZGkAo-/0/1747148978473?e=1750291200&v=beta&t=BDLquZ51mzhTwynbvsA9KAKTyTkxKqMvNrYKVO69cGs" alt="Project 5"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQFiqZEe5H_NHw/feedshare-shrink_2048_1536/B56ZbKMbRRHUAs-/0/1747148978421?e=1750291200&v=beta&t=D24xr8UULLP-gkBAcIAdKcPtzY1nRoXm5yBcsmBcInQ" alt="Project 6"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQG4hWUqf312Og/feedshare-shrink_2048_1536/B56ZbKMbSFH4As-/0/1747148981591?e=1750291200&v=beta&t=eK34aQgOlljvsTC-7NvaLCX9HG35MA1Bp1IAIwNycgI" alt="Project 7"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQGKTR9Lr4V3Vw/feedshare-shrink_2048_1536/B56ZbKMbSXHUAo-/0/1747148980322?e=1750291200&v=beta&t=Gmz3IXgaIQ_Gj70Ht7Yg6BllL3bNHbJzp7gTs89uQwM" alt="Project 8"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQE5s749pQyFig/feedshare-shrink_2048_1536/B56ZbKMbREHgAo-/0/1747148978428?e=1750291200&v=beta&t=ukebKWviHSZLsZtUTDuMQ-M-e1qukhpDBte2DK6X2xU" alt="Project 9"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQGTe1Bo7LBTwg/feedshare-shrink_1280/B56ZbKMbSLGoAw-/0/1747148978475?e=1750291200&v=beta&t=RPmXSzVzT4S_XeLFboZZXIuXiT6pfGak1KYAaxskJVY" alt="Project 10"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQEIgc1vWAhWvw/feedshare-shrink_1280/B56ZbKMbR5H0Ak-/0/1747148978470?e=1750291200&v=beta&t=5nGk9pZEsA9iLegEvraT7UuMADR65J5F7c1tVnA5toY" alt="Project 11"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQE2xUpfHUoDRw/feedshare-shrink_2048_1536/B56ZbKMbRzH0Ao-/0/1747148978571?e=1750291200&v=beta&t=VcY5pDsZoKKeh4LbnMR_2HrCzfW87tRCcGStzGpSUSU" alt="Project 12"></div>
+			  <div class="project-card"><img src="https://media.licdn.com/dms/image/v2/D5622AQFmpzrhMJZdyw/feedshare-shrink_800/B56ZbKMbRNGsAg-/0/1747148977947?e=1750291200&v=beta&t=_1ADtkI00BsS6cZza7RS3jxfNuWF7UIPCf_c6Db1kWg" alt="Project 12"></div>
+		  
+		  </div>
+	  </div>
+	</section>
+
+	<section class="team-section">
+		  <h2>Meet Our Team</h2>
+		  <div class="team-cards">
+		  
+				<div class="card">
+				  <a href="camacho resume.html" style="text-decoration: none; color: inherit;">
+				  <img src="https://media.licdn.com/dms/image/v2/D4E22AQHWwiaGBfX8aQ/feedshare-shrink_2048_1536/B4EZbNby1nGQAo-/0/1747203338977?e=1750291200&v=beta&t=Md5RUvh5LvtGf2qQlMQqJ234lUnSXe5bdd6WZ6_KSgY" alt="Emmanuel Juaquin Camacho" class="team-photo">
+				  <h4>Emmanuel Juaquin Camacho</h4>
+				  </a>
+				  <p>Animator</p>
+				  <div class="social-icons">
+						<img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/768px-Facebook_f_logo_%282021%29.svg.png?20210818083032" alt="Facebook">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram">
+						<img src="https://goodly.co.in/wp-content/uploads/2023/10/youtube-logo-png-46016-1.png" alt="YouTube">
+				  </div>
+				</div>
+				
+				<div class="card">
+				  <a href="mosca resume.html" style="text-decoration: none; color: inherit;">
+				  <img src="https://media.licdn.com/dms/image/v2/D4E22AQFT3cpLdQe4ag/feedshare-shrink_1280/B4EZbNby2bHwAk-/0/1747203338646?e=1750291200&v=beta&t=CxpbhYUazDZ0nwMnWbg25gQo9N24SeZUcLnIMQxoqs4" alt="Jenny Mae Mosca" class="team-photo">
+				  <h4>Jenny Mae Mosca</h4>
+				  </a>
+				  <p>Graphic Artist</p>
+				  <div class="social-icons">
+						<img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/768px-Facebook_f_logo_%282021%29.svg.png?20210818083032" alt="Facebook">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram">
+						<img src="https://goodly.co.in/wp-content/uploads/2023/10/youtube-logo-png-46016-1.png" alt="YouTube">
+				  </div>
+				</div>
+				
+				<div class="card">
+				  <a href="pagar resume.html" style="text-decoration: none; color: inherit;">
+				  <img src="https://media.licdn.com/dms/image/v2/D4E22AQEiDMLboXq5cQ/feedshare-shrink_2048_1536/B4EZbNby22HoAo-/0/1747203339580?e=1750291200&v=beta&t=ENLSa_r_kQo2eH5GyS2XatjSjVaC5e40j0GtOA0xUb0" alt="Johan Faith Pagar" class="team-photo">
+				  <h4>Johan Faith Pagar</h4>
+				  </a>
+				  <p>Animator</p>
+				  <div class="social-icons">
+						<img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/768px-Facebook_f_logo_%282021%29.svg.png?20210818083032" alt="Facebook">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram">
+						<img src="https://goodly.co.in/wp-content/uploads/2023/10/youtube-logo-png-46016-1.png" alt="YouTube">
+				  </div>
+				</div>
+				
+				<div class="card">
+				  <a href="perez resume.html" style="text-decoration: none; color: inherit;">
+				  <img src="https://media.licdn.com/dms/image/v2/D4E22AQHZJKgnVRmZ0w/feedshare-shrink_1280/B4EZbNby1lHwAs-/0/1747203339893?e=1750291200&v=beta&t=q-RnoANo1Ds1UdrCz9lgPb6Hf4EUkJwkA_kwTXKLAqk" alt="Rica Mae Perez"class="team-photo">
+				  <h4>Rica Mae Perez</h4>
+				  </a>
+				  <p>Animator</p>
+				  <div class="social-icons">
+						<img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/768px-Facebook_f_logo_%282021%29.svg.png?20210818083032" alt="Facebook">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram">
+						<img src="https://goodly.co.in/wp-content/uploads/2023/10/youtube-logo-png-46016-1.png" alt="YouTube">
+				  </div>
+				</div>
+				
+				<div class="card">
+				  <a href="maratas resume.html" style="text-decoration: none; color: inherit;">
+				  <img src="https://media.licdn.com/dms/image/v2/D4E22AQEIOeMNmVKkMQ/feedshare-shrink_2048_1536/B4EZbNby3BGcAw-/0/1747203339799?e=1750291200&v=beta&t=NYsc-7Fhriwy6W1pzNt4Ag2TXAE7m0mKfi8dCewEmQs" alt="Mark Noel Maratas" class="team-photo">
+				  <h4>Mark Noel Maratas</h4>
+				  </a>
+				  <p>3D Modeler</p>
+				  <div class="social-icons">
+						<img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/768px-Facebook_f_logo_%282021%29.svg.png?20210818083032" alt="Facebook">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram">
+						<img src="https://goodly.co.in/wp-content/uploads/2023/10/youtube-logo-png-46016-1.png" alt="YouTube">
+				  </div>
+				</div>
+		  </div>
+	</section>
+
+	<footer>
+		  <div>
+				<h4>Product</h4>
+				<a href="#">UI & UX</a>
+				<a href="#">Portfolio</a>
+				<a href="#">Animation</a>
+				<a href="#">Branding</a>
+				<a href="#">Graphic Design</a>
+		  </div>
+		  <div>
+				<h4>Legal</h4>
+				<a href="#">Terms of use</a>
+				<a href="#">Privacy Policy</a>
+				<a href="#">Legal Notice</a>
+				<a href="#">Security Policy</a>
+		  </div>
+		  <div>
+				<h4>Company</h4>
+				<a href="#">About</a>
+				<a href="#">Careers</a>
+				<a href="#">Blog</a>
+		  </div>
+	</footer>
+
+</body>
+</html>

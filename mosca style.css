@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #2b2b2b;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #1e1e1e;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-box {
+    background: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    padding: 20px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; 
+}
+
+.profile-image img {
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(1, 1, 1, 1);
+}
+
+.intro {
+    max-width: 500px;
+}
+
+.intro h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.intro p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+
+.project-card img {
+    width: 220px;
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.project-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px; 
+    font-family: 'Poppins', sans-serif;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.socials img {
+    width: 30px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.round-button {
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: #111; 
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.round-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+footer {
+    margin-bottom: 60px;
+}
+
+ footer img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s;
+    }
+
+    footer img:hover {
+      transform: scale(1.2);
+    }

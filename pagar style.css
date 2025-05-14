@@ -1,0 +1,123 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+}
+
+.profile-container {
+  display: flex; /* Aligns the image and text side by side */
+  align-items: center; /* Vertically centers the items */
+  justify-content: flex-start;
+}
+
+.profile-pic {
+  width: 120px; /* Ensures the image stays a square */
+  height: 120px; /* Ensures the image stays a square */
+  object-fit: cover; /* Ensures the image doesn't stretch */
+  border-radius: 50%; /* Makes the image round */
+  border: 1px solid #ccc;
+  margin-right: 20px; /* Adds space between the image and the name/contact details */
+}
+
+.name-contact {
+  display: flex;
+  flex-direction: column; /* Stacks the name and contact information */
+  justify-content: center;
+}
+
+h1 {
+  text-align: left;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.name-light {
+  font-weight: normal;
+  color: #000;
+}
+
+.name-bold {
+  font-weight: 900;
+  color: #000;
+}
+
+.contact {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left; /* Align text to the left */
+  margin-bottom: 10px; /* Space below contact info before line */
+  border-bottom: 2px solid #ccc; /* Adds a border line below the contact info */
+  padding-bottom: 10px; /* Adds some space between the text and the line */
+}
+
+.contact a {
+  color: #2e7d32;
+  text-decoration: none;
+}
+
+.summary {
+  margin: 20px 0;
+  font-style: italic;
+  text-align: justify;
+}
+
+h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-family: Georgia, serif;
+  color: #2e7d32; /* green */
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.job, .edu {
+  margin-bottom: 20px;
+}
+
+.job h3, .edu h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+  font-weight: bold;
+}
+
+.job p, .edu p {
+  margin: 5px 0;
+  text-align: justify;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.round-button {
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: #2e7d32; 
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.round-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
